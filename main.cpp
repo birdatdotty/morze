@@ -1,10 +1,17 @@
 #include <QGuiApplication>
+#include <QIcon>
 #include <QQmlApplicationEngine>
 
 #include <QQmlContext>
 
 #include "Morze.h"
 #include <QDebug>
+
+
+#include <QBitmap>
+#include <QColor>
+//#include <QImage>
+#include <QPixmap>
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +33,10 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+
+    QPixmap pixmap(":/morze.png");
+    app.setWindowIcon(pixmap);
+
 
     return app.exec();
 }
